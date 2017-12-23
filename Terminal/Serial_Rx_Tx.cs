@@ -38,16 +38,6 @@ namespace SERIAL_RX_TX
       onMessageReceived -= FunctionToCall;
     }
 
-    public void WriteTimeout(int milliseconds)
-		{
-			comPort.WriteTimeout = milliseconds;
-		}
-
-		public void ReadTimeout(int milliseconds)
-		{
-			comPort.ReadTimeout = milliseconds;
-		}
-
     public void SendLine(string aString)
     {
       try
