@@ -1,3 +1,6 @@
+12/22/2017, Dale Gambill
+------------------------
+Removed WriteTimeout() and ReadTimeout() functions.
 
 12/19/2017, Dale Gambill
 ------------------------
