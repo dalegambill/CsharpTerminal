@@ -1,4 +1,4 @@
-Dale Gambill, 3/10/2018
+Dale Gambill, 4/1/2018
 
 I wrote this serial data program in C# so that I could compare it to the one I wrote in Python 3.5.
 
@@ -12,3 +12,8 @@ These two modules show you how to use serial COM ports on Windows 10 to do the f
  
 All Visual Studio 2017 project files are included.
 
+To test, I used a virtual com port utility, com0com, because I do not have serial
+COM port hardware on my computer.  Com0com can be downloaded from this site:
+http://www.download82.com/download/windows/null-modem-emulator-com0com/
+
+For reverse-chronological release notes, see readme.txt in the TERMINAL folder.
