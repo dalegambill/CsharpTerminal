@@ -4,6 +4,10 @@
 // When a line of text arrives from the COM port terminated by a \n character, this module will pass the message to
 // the function specified by the application.   The application can also send a line of text.
 //
+// IMPORTANT: The dot net function below, comPort.ReadLine(), will not throw an error if there is no data, but might throw 'System.TimeoutException', if the data
+// is not lines of text terminated by /n.  This would be because ReadLine() cannot find a line terminator in the wrong type of data.
+// This code is intended for use with lines of text only.  It is not intended for use with any other type of data.
+//
 using System;
 using System.IO.Ports;
 using System.Diagnostics;
@@ -88,7 +92,7 @@ namespace SERIAL_RX_TX
             break;
         }
         comPort.Open();
-        comPort.DataReceived += new SerialDataReceivedEventHandler(DataReceviedHandler);
+        comPort.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
       }
       catch (Exception error)
       {
@@ -122,7 +126,7 @@ namespace SERIAL_RX_TX
       return comPort.IsOpen;
     }
 
-    private void DataReceviedHandler(object sender, SerialDataReceivedEventArgs e)
+    private void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
     {
       if (!comPort.IsOpen)
       {
